@@ -77,7 +77,6 @@ def main():
                         help="Absolute difference of the HOMO of monomer A and HOMO of monomer B")
 
     (options, args) = parser.parse_known_args()
-    print(options)
 
     files = []
     for argv in sys.argv:

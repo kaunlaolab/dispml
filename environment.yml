@@ -119,3 +119,4 @@ dependencies:
   - xz=5.2.6=h166bdaf_0
   - zlib=1.2.13=hd590300_5
   - zstd=1.5.5=hfc55251_0
+prefix: /home/corev/miniconda3/envs/dispml
