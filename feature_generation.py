@@ -189,7 +189,6 @@ def getfingerprint(mol_a, mol_b, model):
         with open(PATH+"/smarts_d3fp.json") as file:
             smarts = json.load(file)
     elif 'MBD' in model:
-        print('hi')
         pairhod = hods.pairhd_mbd
         subshod = hods.subhd_mbd
 
