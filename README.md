@@ -23,10 +23,12 @@ Once the environment is installed, activate it and run the code:
  conda activate YOUR_ENV_NAME
  python3 main.py /path/to/monomer_a.xyz /path/to/monomer_b.xyz
  ```
-Which will provide D3-ML values by default. For more information:
+Which will provide D3-ML values by default. For models that rely on quantum features, the (X)SAPT interaction enerygy components (Electrostatics, Exchange, Indutction and Exchange-Induction) must be passed to the program directly. If using MBD as the baseline model, the MBD@rsSCS and MBD@esDQ terms must be passed directly.
+For more information:
 ```
 python3 main.py --help
 ```
+
 ## Dependencies:
 ```
 - Numpy
