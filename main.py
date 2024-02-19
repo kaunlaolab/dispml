@@ -13,7 +13,7 @@ class dispML:
     """
     Calculates Edisp from baseline model and ML correction.
     """
-    def __init__(self, monomer_a, monomer_b, model, charge=0, quantum_features=None, e6=None, e8=None):
+    def __init__(self, monomer_a, monomer_b, model, quantum_features=None, e6=None, e8=None):
         """
            Calculate dispersion energy between 2 monomers from a baseline method (D3 or MBD) + ML correction
            :param monomer_a: RDKit mol object: RDKit mol object of the first monomer.
@@ -60,7 +60,8 @@ class dispML:
         self.features = [self.e6, self.e8]
         if quantum_features:
             self.features = self.features + quantum_features
-        self.features.append(charge)
+
+        # self.features.append(charge)
         self.features = self.features + fpgen.getfingerprint(monomer_a, monomer_b, model)
         self.corr = mlmodel.predict([self.features])[0]
         self.disp = self.eint + self.corr
@@ -69,8 +70,6 @@ def main():
     parser = ArgumentParser()
     parser.add_argument("--name", dest="name", type=str, default=None,
                         help="Name of dimer to be printed with output, optional.")
-    parser.add_argument("--charge", dest="charge", type=int, default=0,
-                        help = "Total charge of the dimer. Set to 0 by default.")
     parser.add_argument("--model", dest="model", choices=['D3-ML', 'D3-S-ML', 'D3-X-ML', 'MBD-S-ML', 'MBD-X-ML'],
                         default="D3-ML", help="Choice of models between D3-ML, D3-S-ML, D3-X-ML, MBD-S-ML or MBD-X-ML")
     parser.add_argument("--mbde6", dest="mbde6", type=float, default=None,
@@ -124,7 +123,7 @@ def main():
         if quantum_features is None:
             raise TypeError('Must provide quantum features if using quantum features based models.')
 
-    results = dispML(monomers[0], monomers[1], options.model, options.charge, quantum_features, options.mbde6, options.mbde8)
+    results = dispML(monomers[0], monomers[1], options.model, quantum_features, options.mbde6, options.mbde8)
     print(name, ", Baseline model Edisp:", results.eint, ", ML correction:", results.corr, ", DispML:", results.disp)
 
 if __name__ == "__main__":

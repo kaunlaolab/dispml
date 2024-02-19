@@ -196,7 +196,9 @@ def getfingerprint(mol_a, mol_b, model):
             smarts = json.load(file)
 
     mol1dict, mol2dict = get_mol(mol_a), get_mol(mol_b)
-    fingerprint = [count_hb(mol1dict, mol2dict, *x) for x in [['N', 'O'], ['N', 'N'], ['O','N'], ['O', 'O']]]
+    charge = Chem.rdmolops.GetFormalCharge(mol_a) + Chem.rdmolops.GetFormalCharge(mol_b)
+    fingerprint = [charge]
+    fingerprint = fingerprint + [count_hb(mol1dict, mol2dict, *x) for x in [['N', 'O'], ['N', 'N'], ['O','N'], ['O', 'O']]]
     fingerprint = fingerprint + hod_atom_pair(mol1dict, mol2dict, pairhod)
     fingerprint = fingerprint + hod_substructures_pairs(mol_a, mol_b, smarts, subshod)
 
