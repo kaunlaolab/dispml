@@ -1,3 +1,12 @@
+"""
+This script is calculates the features used in D3-/MBD-ML models, and as
+such is part of the D3-/MBD-ML program. It requires the fallowing files
+-atomicWeightsDecimal.py (https://github.com/HegemanLab/atomicWeightsDecimal)
+-smarts_d3fp.json
+-smarts_mbdfp.json
+-HoD_parameters.py
+"""
+
 import math
 import json
 from atomicWeightsDecimal import atomicWeightsDecimal as masses
