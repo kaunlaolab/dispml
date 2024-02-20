@@ -1,5 +1,8 @@
-# A Python dictionary of atomic weights in Decimal
-# https://github.com/HegemanLab/atomicWeightsDecimal
+"""
+A Python dictionary of atomic weights in Decimal
+https://github.com/HegemanLab/atomicWeightsDecimal
+Copyright (c) 2018, Hegeman Lab
+"""
 
 from decimal import Decimal
 
