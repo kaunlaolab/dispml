@@ -1,3 +1,8 @@
+"""
+Dictionaries of parameters for the constructrion of the histogram of distances
+used in the D3-/MBD-ML models
+"""
+
 pairhd_d3 = {'C-C': [2.973891450400448, 3.5923128756386875, 4],
  'C-O': [1.8744829830944558, 6.630391468055696, 9],
  'C-H': [1.9753533963458412, 9.728512127725434, 11],
