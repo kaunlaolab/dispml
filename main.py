@@ -1,3 +1,24 @@
+"""D3-/MBD-ML
+
+This script allows the rapid prediction of the dispersion component of the 
+interaction energy, using a baseline model (D3 or MBD) and added ML correction.
+It will generate the features used as input to the XGBoost model, and will calculate
+the baseline value if using D3.
+
+This tool accepts XYZ or SDF formatted files containing the molecular geometry.
+If an XYZ file is used, it will rely on xyz2mol to convert the system 
+to a RDKit mol object. The SDF file format is however recommended 
+in case of complexe systems to ensure proper placements of bonds and charge,
+or if this code runs for a seemingly long time.
+
+This script requires that numpy, RDKit, xyz2mol, scikit-learn and XGBoost
+be installed within the Python environment you are running this script in.
+
+This file can also be imported as a module. In such case, the class dispML()
+may be used to calculate the baseline Edisp, the ml correction and the predicted
+Edisp value.
+"""
+
 import saptd3
 import feature_generation as fpgen
 import sys
