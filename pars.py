@@ -1,4 +1,6 @@
-
+"""
+parameters used in Grimme's D3 or SAPT-D3 models
+"""
 
 # -------------------------necessary atom dependent properties -------------------------------
 atomic_properties = {'H': {'atomic#': 1, 'rcov': 0.32, 'r2r4': 8.0589},
