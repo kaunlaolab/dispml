@@ -36,5 +36,4 @@ python3 main.py --help
 - Scikit-learn
 - XGBoost
 - xyz2mol
-- atomicWeightsDecimal (https://github.com/HegemanLab/atomicWeightsDecimal)
 ```
