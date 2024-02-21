@@ -18,7 +18,8 @@ hartree2kcal = 627.5095
 
 def coordination_numbers(mol):
     """
-    Calculates modified coordination numbers based on the SAPT-D3 scheme. See DOI: 10.1021/acs.jctc.6b01198
+    Calculates modified coordination numbers based on the SAPT-D3 scheme, as implemented in Cuby4.
+    See DOI: 10.1021/acs.jctc.6b01198
     :param mol: dict: containing atoms and associated coordinates. See  read_xyz().
     :return: list: containing coordination numbers, with index associated with the mol dictionary
     """
@@ -28,7 +29,6 @@ def coordination_numbers(mol):
         for j, atom2 in enumerate(mol['atom']):
             if i != j:
                 r = math.dist(mol['coordinates'][i], mol['coordinates'][j])
-                # rco = atomic_properties[atom1]['rcov'] + atomic_properties[atom2]['rcov'] *1.1
                 rco = (rcov_cuby4[atom1] + rcov_cuby4[atom2]) * 1.1
                 if r <= rco:
                     xn = xn+1
