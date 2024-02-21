@@ -1,6 +1,6 @@
 """
-This script is calculates the features used in D3-/MBD-ML models, and as
-such is part of the D3-/MBD-ML program. It requires the fallowing files
+Library of functions used to calculate the features for in D3-/MBD-ML, and as
+such is part of the D3-/MBD-ML program. It requires the following files
 -atomicWeightsDecimal.py (https://github.com/HegemanLab/atomicWeightsDecimal)
 -smarts_d3fp.json
 -smarts_mbdfp.json
