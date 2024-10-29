@@ -8,7 +8,7 @@ charge=1=
 ```
 For more information on xyz2mol, please see the related article at DOI:10.1002/bkcs.10334, or the github link cited above.
 
-For complexe systems or if the system contains multiple charges, using a SDF file is recommended to ensure this program performs to the best of its ability. The SDF format ensures proper placement of charges or bonds, and can be used directly by RDKit without preprocessing by xyz2mol, which may represents the bottleneck of this code. For instance, in systems where the monomer consists of a single atom, such as noble gases, using an SDF file is essential to bypass issues caused by xyz2mol.
+For complexe systems or if the system contains multiple charges, using a SDF file is recommended to ensure this program performs to the best of its ability. The SDF format ensures proper placement of charges or bonds, and can be used directly by RDKit without preprocessing by xyz2mol, which may represents the bottleneck of this code. **For instance, in systems where the monomer consists of a single atom, such as noble gases, using an SDF file is essential to bypass issues caused by xyz2mol.**
 
 ## Running the code:
 
